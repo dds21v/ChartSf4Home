@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Liste des utilisateurs</h1>
+    <ul>
+        {% for user in users %}
+            <li>
+                {{ user.username }}
+                <button type="button" class="btn btn-danger btn-sm" >
+                    <a href="{{ path('app_user_editrole', {id: user.id}) }}" style="color:ghostwhite;">Modifier le rôle</a>
+                </button>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}

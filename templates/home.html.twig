@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <h2>Liste des oeuvres</h2>
+
+    <ul>
+        {% for art in arts %}
+            <li>{{ art.nameArt }}</li>
+            <div class="btn-group">
+                <a href="{{ path('app_show', {slug: art.slug}) }}" class="btn btn-outline-secondary">Détails</a>
+            </div>
+        {% endfor %}
+    </ul>
+
+    <h2>Liste des Artistes</h2>
+
+    <ul>
+        {% for artist in artists %}
+            <li>{{ artist.nameArtist }}</li>
+            <div class="btn-group">
+                <a href="{{ path('app_showArtist', {slug: artist.slug}) }}" class="btn btn-outline-secondary">Détails</a>
+            </div>
+        {% endfor %}
+    </ul>
+
+    <h2>Liste des Musées</h2>
+
+    <ul>
+        {% for museum in museums %}
+            <li>{{ museum.nameMuseum }}</li>
+            <div class="btn-group">
+                <a href="{{ path('app_showMuseum', {slug: museum.slug}) }}" class="btn btn-outline-secondary">Détails</a>
+            </div>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+

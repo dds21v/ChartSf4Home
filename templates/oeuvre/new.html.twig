@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Création d’une nouvelle oeuvre</h2>
+
+    {{ form_start(createForm) }}
+    {{ form_widget(createForm) }}
+    <div class="form-group row">
+        <div class="col-sm-2">
+
+        </div>
+        <div class="col-sm-10">
+            <button type="submit" class="btn-success btn">Créer l’oeuvre</button>
+        </div>
+    </div>
+
+    {{ form_end(createForm) }}
+
+
+{% endblock %}

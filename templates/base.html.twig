@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Chart{% endblock %}</title>
+
+
+        <meta name="viewport" content="width=device, initial-scale=1">
+        {% block stylesheets %}
+            <link rel="stylesheet" href="/css/bootstrap.min.css">
+            <link href="/css/style.css" rel="stylesheet">
+        {% endblock %}
+
+    </head>
+
+    <body>
+        <img src="/img/testbg.jpg" alt="Background" id="bg">
+
+        {% block header %}
+            <header>
+                <div class="bgheader">
+                    <a href="{{ path('app_home') }}"><img src="/img/chart.title.png" alt="Title" class="title"></a>
+                </div>
+                <input type="checkbox" id="box">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#chat">
+                                <h3>
+                                    <img src="/img/chat.png" alt="">
+                                </h3>
+                            </a>
+                        </li>
+
+                        <li>
+                            <h3>
+                                <img src="/img/userChart1.png" alt="Icone Profil" class="profil">
+                            </h3>
+                        </li>
+
+                        <li>
+                            <a href="#"><h3><img src="/img/art.png" alt=""></h3>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        {% endblock %}
+
+        {% for type, messages in app.flashes %}
+            {% for message in messages %}
+                {% block flashes %}
+                    <div class="container">
+                        <br>
+                        <div class="alert alert-{{ type }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <br>
+                    </div>
+                {% endblock %}
+            {%  endfor %}
+        {% endfor %}
+
+        <main>
+        {% block body %}{% endblock %}
+        </main>
+        {% block javascripts %}
+            <script src="/js/jquery-3.3.1.min.js"></script>
+            <script src="/js/bootstrap.bundle.min.js"></script>
+        {% endblock %}
+    </body>
+</html>

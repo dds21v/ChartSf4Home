@@ -1,0 +1,67 @@
+app_home:
+    path: /
+    controller: App\Controller\HomeController::home
+
+app_show:
+    path: /oeuvre/{slug}
+    controller: App\Controller\OeuvreController::show
+    methods: GET|POST
+
+app_new:
+    path: /oeuvre/
+    controller: App\Controller\OeuvreController::new
+    methods: GET|POST
+
+app_editOeuvre:
+    path: /oeuvre/{slug}/edit
+    controller: App\Controller\OeuvreController::editOeuvre
+    methods: GET|POST
+
+app_deleteOeuvre:
+    path: /oeuvre/{slug}/delete
+    controller: App\Controller\OeuvreController::deleteOeuvre
+
+
+app_showArtist:
+    path: /artist/{slug}
+    controller: App\Controller\ArtisteController::showArtist
+    methods: GET|POST
+
+app_newArtist:
+    path: /artist/
+    controller: App\Controller\ArtisteController::newArtist
+    methods: GET|POST
+
+app_editArtist:
+    path: /artist/{slug}/edit
+    controller: App\Controller\ArtisteController::editArtist
+    methods: GET|POST
+
+app_deleteArtist:
+    path: /artist/{slug}/delete
+    controller: App\Controller\ArtisteController::deleteArtist
+
+app_showMuseum:
+    path: /museum/{slug}
+    controller: App\Controller\MuseumController::showMuseum
+    methods: GET|POST
+
+app_newMuseum:
+    path: /museum/
+    controller: App\Controller\MuseumController::newMuseum
+    methods: GET|POST
+
+app_editMuseum:
+    path: /museum/{slug}/edit
+    controller: App\Controller\MuseumController::editMuseum
+    methods: GET|POST
+
+app_deleteMuseum:
+    path: /museum/{slug}/delete
+    controller: App\Controller\MuseumController::deleteMuseum
+
+app_list:
+    path: /admin/userlist
+    controller: App\Controller\UserController::listUser
+
+

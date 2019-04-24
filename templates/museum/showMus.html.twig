@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+
+        <h3>{{ museum.nameMuseum }}</h3>
+        <br>
+        <p>{{ museum.histoireMuseum }}</p>
+        <br>
+        {% for oeuvre in museum.oeuvres %}
+            <p>{{ oeuvre.nameArt}}</p>
+        {% endfor %}
+
+        {% if is_granted('ROLE_MODERATEUR') %}
+            <a href="{{ path('app_editMuseum', {slug: museum.slug}) }}" class="btn btn-outline-secondary">Modifier l'article</a>
+            <a href="{{ path('app_deleteMuseum', {slug: museum.slug}) }}" class="btn btn-outline-secondary">Supprimer l'article</a>
+        {% endif %}
+
+    {% endblock %}
